@@ -94,7 +94,7 @@ AC_SUBST([LUXA_SO_VERSION], [0:1:0])
 AC_SUBST([LUXA_API_VERSION], [1.0])
 
 # save configure options in config.nice
-V3D_CONFIG_NICE([config.nice])
+LUXA_CONFIG_NICE([config.nice])
 
 AC_CONFIG_FILES([
 Makefile 
