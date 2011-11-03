@@ -12,12 +12,8 @@ AC_CHECK_HEADERS([iostream])
 # need at least boost 1.41 for property tree support
 BOOST_REQUIRE([1.41])
 BOOST_TEST
-# need boost signals for libv3dcommand
-BOOST_SIGNALS
-# libv3dimage needs boost system & filesystem
 BOOST_SYSTEM
 BOOST_FILESYSTEM
-# needed by imagetool
 BOOST_PROGRAM_OPTIONS
 
 # use pkg-config
@@ -94,8 +90,8 @@ AC_SUBST([GCOV_LDFLAGS])
 AC_MSG_RESULT([$enable_gcov])
 
 
-AC_SUBST([VERTICAL3D_SO_VERSION], [0:1:0])
-AC_SUBST([VERTICAL3D_API_VERSION], [1.0])
+AC_SUBST([LUXA_SO_VERSION], [0:1:0])
+AC_SUBST([LUXA_API_VERSION], [1.0])
 
 # save configure options in config.nice
 V3D_CONFIG_NICE([config.nice])

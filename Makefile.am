@@ -34,7 +34,7 @@ cov:
 gcov-report:
 	@mkdir -p coverage
 	@lcov --compat-libtool --directory . --capture --output-file coverage/app.info
-	@lcov --extract coverage/app.info *vertical3d/* --output-file coverage/local.info
+	@lcov --extract coverage/app.info *luxa/* --output-file coverage/local.info
 	@genhtml -o coverage/ coverage/local.info 
 gcov-reset:
 	@rm -fr coverage
