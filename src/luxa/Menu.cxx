@@ -92,7 +92,9 @@ bool Menu::up()
 bool Menu::down()
 {
 	if (active_ == items_.end())
+	{
 		return false;
+	}
 	boost::shared_ptr<Menu> sm = (*active_)->submenu();
 	if (sm)
 	{
@@ -120,11 +122,11 @@ void Menu::activate()
 	{
 		if (item->type() == "submenu" && item->submenu()) // menu item has a submenu so activate the submenu
 		{
-			menu->down();
+			bool activated = down();
 		}
 		else if (item->type() == "action") // menu item represents a command so execute the bound command
 		{
-			manager_->dispatch(item->command(), item->scope()), item->param());
+			manager_->execCommand(item->command(), item->scope(), item->param());
 		}
 		else if (item->type() == "input" || item->type() == "numeric_input" || item->type() == "key_input")
 		{

@@ -3,7 +3,8 @@ ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS} -I .
 
 bin_PROGRAMS = unit_tests
 unit_tests_SOURCES = \
-TestMain.cxx
+TestMain.cxx \
+ButtonTest.cxx
 
 AM_CPPFLAGS = $(DEPS_CFLAGS) $(BOOST_CPPFLAGS) $(GCOV_CFLAGS)
 AM_LDFLAGS = $(BOOST_UNIT_TEST_FRAMEWORK_LDFLAGS) $(GCOV_LDFLAGS) \

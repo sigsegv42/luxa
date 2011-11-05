@@ -76,6 +76,13 @@ boost::shared_ptr<Component> ComponentManager::intersect(v3D::Vector2 point) con
 	return component;
 }
 
+bool ComponentManager::execCommand(const std::string & cmd, const std::string & scope, const std::string param)
+{
+	v3D::CommandInfo command(cmd, scope);
+	bool result = directory_->exec(command, param);
+	return result;
+}
+
 void ComponentManager::buttonPressed(unsigned int button)
 {
 	// get the control at the top of the stack at these coordinates

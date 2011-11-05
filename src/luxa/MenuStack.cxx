@@ -4,6 +4,8 @@
 #include "Style.h"
 #include "FontStyleProperty.h"
 
+#include <vertical3d/gl/GLFontRenderer.h>
+
 using namespace Luxa;
 
 MenuStack::MenuStack(ComponentManager * cm) : Menu(cm)
@@ -35,6 +37,8 @@ void MenuStack::draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme
 	float x = (renderer->width() / 3.0f);
 	float y = 0.0f;
 
+	v3D::GLFontRenderer fr(*font);
+
 	// iterate over the active menu level
 	for (int i = menu_count; i >= 0; i--)
 	{
@@ -46,7 +50,7 @@ void MenuStack::draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme
 		{
 			active_count = i;
 		}
-		font->print(label, x, y);
+		fr.print(label, x, y);
 	}
 
 	// draw active item marker
@@ -55,6 +59,6 @@ void MenuStack::draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme
 		label = " > ";
 		x -= font->width(label);
 		y = (((renderer->height() - menu_height) / 2.0f) + (active_count * 50.0f));
-		font->print(label, x, y);
+		fr.print(label, x, y);
 	}
 }

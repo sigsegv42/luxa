@@ -105,6 +105,16 @@ namespace Luxa
 
 			bool toggleComponentVisibility(const std::string & name);
 
+			/**
+			 * Call a command
+			 * 
+			 * @param cmd the name of the command
+			 * @param scope the scope of the command
+			 * @param param a parameter for the command
+			 * @return whether the command was successfully called
+			 */
+			bool execCommand(const std::string & cmd, const std::string & scope, const std::string param);
+
 		protected:
 			// overrides from MouseEventListener
 			void motion(unsigned int x, unsigned int y);
