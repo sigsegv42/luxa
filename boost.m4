@@ -640,6 +640,14 @@ BOOST_DEFUN([Program_Options],
 ])# BOOST_PROGRAM_OPTIONS
 
 
+# BOOST_PROPERTY_TREE([PREFERRED-RT-OPT])
+# -----------------------------------------
+# Look for Boost.Program_options.  For the documentation of PREFERRED-RT-OPT,
+# see the documentation of BOOST_FIND_LIB above.
+BOOST_DEFUN([Property_Tree],
+[BOOST_FIND_HEADER([boost/property_tree/ptree.hpp])])
+])# BOOST_PROPERTY_TREE
+
 
 # _BOOST_PYTHON_CONFIG(VARIABLE, FLAG)
 # ------------------------------------
