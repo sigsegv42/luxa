@@ -2,8 +2,10 @@
 #include "FontStyleProperty.h"
 #include "Style.h"
 
-#include <windows.h>
-#include <gl/gl.h>
+#ifdef __WIN32
+	#include <windows.h>
+#endif
+#include <GL/gl.h>
 
 using namespace Luxa;
 

@@ -103,7 +103,7 @@ namespace Luxa
 			 */
 			boost::shared_ptr<Component> intersect(v3D::Vector2 point) const;
 
-			bool ComponentManager::toggleComponentVisibility(const std::string & name);
+			bool toggleComponentVisibility(const std::string & name);
 
 		protected:
 			// overrides from MouseEventListener

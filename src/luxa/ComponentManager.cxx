@@ -2,7 +2,7 @@
 #include "Component.h"
 #include "Theme.h"
 
-#include <image/ImageFactory.h>
+#include <vertical3d/image/ImageFactory.h>
 
 #include <boost/bind.hpp>
 #include <boost/cast.hpp>

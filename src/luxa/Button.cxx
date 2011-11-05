@@ -4,6 +4,8 @@
 #include "ImageStyleProperty.h"
 #include "FontStyleProperty.h"
 
+#include <vertical3d/gl/GLFontRenderer.h>
+
 using namespace Luxa;
 
 Button::Button(ComponentManager * cm) : Component(cm), state_(STATE_NORMAL)
@@ -165,7 +167,8 @@ void Button::draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme> &
 	button_mid_x -= font_width / 2.0f;
 	button_mid_y -= font_height / 2.0f;
 	// cm->renderer()->print(font, button_mid_x, button_mid_y, _label)
-	font->print(label_, button_mid_x, button_mid_y);
+	v3D::GLFontRenderer fr(*font);
+	fr.print(label_, button_mid_x, button_mid_y);
 
 
 	// return to parent coordinate system

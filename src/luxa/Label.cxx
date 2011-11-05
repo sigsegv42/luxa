@@ -1,6 +1,8 @@
 #include "Label.h"
 #include "ComponentRenderer.h"
 
+#include <vertical3d/gl/GLFontRenderer.h>
+
 using namespace Luxa;
 
 Label::Label(ComponentManager *cm) : Component(cm)
@@ -27,7 +29,10 @@ void Label::draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme> & 
 
 	boost::shared_ptr<v3D::Font2D> font = renderer->getDefaultFont("label", theme);
 	if (!font)
+	{
 		return;
-	font->print(text_, pos[0], pos[1]);
+	}
+	v3D::GLFontRenderer fr(*font);
+	fr.print(text_, pos[0], pos[1]);
 }
 

@@ -1,4 +1,5 @@
 #include "Menu.h"
+#include "ComponentManager.h"
 
 using namespace Luxa;
 

@@ -19,7 +19,7 @@ namespace Luxa
 			/**
 			 * Overlay Mode
 			 */ 
-			typedef enum Mode
+			enum Mode
 			{
 				MODE_TRANSPARENT,
 				MODE_COLOR

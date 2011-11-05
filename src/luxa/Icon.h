@@ -3,7 +3,7 @@
 
 #include "Component.h"
 
-#include <image/Texture.h>
+#include <vertical3d/image/Texture.h>
 
 #include <boost/shared_ptr.hpp>
 
