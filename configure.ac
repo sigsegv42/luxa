@@ -9,6 +9,11 @@ AC_HEADER_STDC
 AC_CHECK_HEADERS([string])
 AC_CHECK_HEADERS([iostream])
 
+# need at least vertical3d 1.0
+V3D_REQUIRE([1.0])
+# additional v3d library checks
+V3D_3DTYPES
+
 # need at least boost 1.41 for property tree support
 BOOST_REQUIRE([1.41])
 BOOST_TEST

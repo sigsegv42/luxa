@@ -1,9 +1,9 @@
 #ifndef INCLUDED_LUXA_COMPONENTRENDERER
 #define INCLUDED_LUXA_COMPONENTRENDERER
 
-#include <3dtypes/Vector2.h>
-#include <image/Texture.h>
-#include <font/FontCache.h>
+#include <vertical3d/3dtypes/Vector2.h>
+#include <vertical3d/image/Texture.h>
+#include <vertical3d/font/FontCache.h>
 
 #include <boost/shared_ptr.hpp>
 

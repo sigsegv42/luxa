@@ -1,7 +1,7 @@
 #ifndef INCLUDED_LUXA_UILOADER
 #define INCLUDED_LUXA_UILOADER
 
-#include <util/PropertyTree.h>
+#include <vertical3d/util/PropertyTree.h>
 #include <boost/shared_ptr.hpp>
 
 namespace Luxa

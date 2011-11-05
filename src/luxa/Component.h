@@ -3,10 +3,10 @@
 
 #include "Theme.h"
 
-#include <3dtypes/Vector2.h>
-#include <3dtypes/Bound2D.h>
-#include <command/CommandInfo.h>
-#include <command/EventListener.h>
+#include <vertical3d/3dtypes/Vector2.h>
+#include <vertical3d/3dtypes/Bound2D.h>
+#include <vertical3d/command/CommandInfo.h>
+#include <vertical3d/command/EventListener.h>
 
 #include <string>
 

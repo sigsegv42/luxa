@@ -3,11 +3,11 @@
 
 #include "ComponentRenderer.h"
 
-#include <image/Texture.h>
-#include <hookah/Window.h>
-#include <input/MouseEventListener.h>
-#include <input/KeyboardEventListener.h>
-#include <command/CommandDirectory.h>
+#include <vertical3d/image/Texture.h>
+#include <vertical3d/hookah/Window.h>
+#include <vertical3d/input/MouseEventListener.h>
+#include <vertical3d/input/KeyboardEventListener.h>
+#include <vertical3d/command/CommandDirectory.h>
 
 #include <vector>
 #include <map>
