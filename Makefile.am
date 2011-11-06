@@ -6,6 +6,11 @@ src/luxa \
 src/uitest \
 src/tests
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = luxa.pc
+
+dist_noinst_SCRIPTS = autogen.sh
+
 gcov_sources = $(unit_tests_SOURCES)
 
 if GCOV_ENABLED

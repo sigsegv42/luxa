@@ -119,6 +119,7 @@ V3D_CONFIG_NICE([config.nice])
 
 AC_CONFIG_FILES([
 Makefile 
+luxa.pc
 src/luxa/Makefile
 src/uitest/Makefile
 src/tests/Makefile
