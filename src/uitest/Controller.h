@@ -3,11 +3,12 @@
 
 #include "../luxa/ComponentManager.h"
 
-#include <command/CommandDirectory.h>
-#include <hookah/Window.h>
-#include <input/KeyboardDevice.h>
-#include <input/MouseDevice.h>
-#include <gui/InputEventAdapter.h>
+#include <vertical3d/command/CommandDirectory.h>
+#include <vertical3d/hookah/Window.h>
+#include <vertical3d/input/KeyboardDevice.h>
+#include <vertical3d/input/MouseDevice.h>
+#include <vertical3d/gui/InputEventAdapter.h>
+#include <vertical3d/font/FontCache.h>
 
 class Controller
 {
@@ -22,8 +23,9 @@ class Controller
 		boost::shared_ptr<Hookah::Window> window_;
 		boost::shared_ptr<v3D::KeyboardDevice> keyboard_;
 		boost::shared_ptr<v3D::MouseDevice> mouse_;
-		boost::shared_ptr<InputEventAdapter> listenerAdapter_;
-		v3D::CommandDirectory directory_;
+		boost::shared_ptr<v3D::InputEventAdapter> listenerAdapter_;
+		boost::shared_ptr<v3D::CommandDirectory> directory_;
+		boost::shared_ptr<v3D::FontCache> fontCache_;
 };
 
 

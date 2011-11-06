@@ -312,7 +312,7 @@ bool UILoader::loadIcon(const boost::property_tree::ptree & icon_node, Component
 	std::string texture_name = icon_node.get<std::string>("<xmlattr>.name");
 	std::string source = icon_node.get<std::string>("<xmlattr>.source");
 
-	boost::shared_ptr<v3D::Texture> texture(new v3D::Texture(cm->loadImage(source)));
+	boost::shared_ptr<v3D::GLTexture> texture(new v3D::GLTexture(cm->loadImage(source)));
 	cm->addTexture(texture_name, texture);
 
 	boost::shared_ptr<Icon> icon(new Icon(texture, cm));
@@ -421,7 +421,7 @@ bool UILoader::loadTextures(ComponentManager * cm)
 			std::string texture_name = (*style_iter)->name() + "-" + image_prop->name() + "-" + image_prop->source();
 			// load the image
 			boost::shared_ptr<v3D::Image> img = cm->loadImage(image_prop->source());
-			boost::shared_ptr<v3D::Texture> texture(new v3D::Texture(img));
+			boost::shared_ptr<v3D::GLTexture> texture(new v3D::GLTexture(img));
 			cm->addTexture(texture_name, texture);
 			image_prop->texture(texture);
 		}

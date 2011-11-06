@@ -3,7 +3,7 @@
 
 #include "StyleProperty.h"
 
-#include <vertical3d/image/Texture.h>
+#include <vertical3d/gl/GLTexture.h>
 
 #include <boost/shared_ptr.hpp>
 
@@ -25,7 +25,7 @@ namespace Luxa
 			 * Get the texture associated with the image property
 			 * @return a pointer to the texture
 			 */
-			boost::shared_ptr<v3D::Texture> texture(void) const;
+			boost::shared_ptr<v3D::GLTexture> texture(void) const;
 			/**
 			 * Get the name of the image source
 			 * @return the image source name
@@ -35,11 +35,11 @@ namespace Luxa
 			 * Set the texture object associated with the image property
 			 * @param tex the texture
 			 */
-			void texture(boost::shared_ptr<v3D::Texture> tex);
+			void texture(boost::shared_ptr<v3D::GLTexture> tex);
 
 		private:
 			std::string source_;
-			boost::shared_ptr<v3D::Texture> texture_;
+			boost::shared_ptr<v3D::GLTexture> texture_;
 	};
 
 }; // end namespace Luxa

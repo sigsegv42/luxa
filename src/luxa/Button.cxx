@@ -69,7 +69,9 @@ void Button::draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme> &
 	{
 		style = boost::dynamic_pointer_cast<ButtonStyle, Style>(*iter);
 		if (style->state() == state_)
+		{
 			break;
+		}
 		style.reset();
 	}
 	// no style for default button with this state
@@ -77,7 +79,7 @@ void Button::draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme> &
 		return;
 
 	boost::shared_ptr<ImageStyleProperty> prop;
-	boost::shared_ptr<v3D::Texture> texture, left_texture, right_texture, top_texture, bottom_texture;
+	boost::shared_ptr<v3D::GLTexture> texture, left_texture, right_texture, top_texture, bottom_texture;
 
 	// preload the 4 side textures first so we can calculate the proper button dims later
 	// left

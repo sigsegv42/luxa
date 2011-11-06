@@ -116,7 +116,7 @@ class TexturedQuad
 };
 */
 
-bool ComponentRenderer::drawTexturedQuad(boost::shared_ptr<v3D::Texture> texture, float position_x, float position_y, float width, float height)
+bool ComponentRenderer::drawTexturedQuad(boost::shared_ptr<v3D::GLTexture> texture, float position_x, float position_y, float width, float height)
 {
 	// get texturing state
 	GLboolean texture_enabled;
@@ -126,7 +126,9 @@ bool ComponentRenderer::drawTexturedQuad(boost::shared_ptr<v3D::Texture> texture
 		glEnable(GL_TEXTURE_2D);
 
 	if (!texture)
+	{
 		return false;
+	}
 	texture->bind();
 
 	glPushMatrix();
@@ -160,17 +162,21 @@ bool ComponentRenderer::drawTexturedQuad(boost::shared_ptr<v3D::Texture> texture
 	return true;
 }
 
-bool ComponentRenderer::drawTexture(boost::shared_ptr<v3D::Texture> texture, v3D::Vector2 position)
+bool ComponentRenderer::drawTexture(boost::shared_ptr<v3D::GLTexture> texture, v3D::Vector2 position)
 {
 	// get texturing state
 	GLboolean texture_enabled;
 	texture_enabled = glIsEnabled(GL_TEXTURE_2D);
 	// enable states if they weren't already
 	if (texture_enabled == GL_FALSE)
+	{
 		glEnable(GL_TEXTURE_2D);
+	}
 
 	if (!texture)
+	{
 		return false;
+	}
 	texture->bind();
 
 	glPushMatrix();
@@ -199,7 +205,9 @@ bool ComponentRenderer::drawTexture(boost::shared_ptr<v3D::Texture> texture, v3D
 
 	// reset texture state to initial setting
 	if (texture_enabled == GL_FALSE)
+	{
 		glDisable(GL_TEXTURE_2D);
+	}
 
 	return true;
 }
@@ -236,7 +244,9 @@ boost::shared_ptr<v3D::Font2D> ComponentRenderer::getDefaultFont(const std::stri
 	// get the default class style
 	std::vector< boost::shared_ptr<Style> > style_set = theme->getStyleSet("default", style_class);
 	if (style_set.empty())
+	{
 		return font;
+	}
 
 	// get the font name from the label style property
 	boost::shared_ptr<FontStyleProperty> font_prop = 

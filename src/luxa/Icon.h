@@ -3,7 +3,7 @@
 
 #include "Component.h"
 
-#include <vertical3d/image/Texture.h>
+#include <vertical3d/gl/GLTexture.h>
 
 #include <boost/shared_ptr.hpp>
 
@@ -20,7 +20,7 @@ namespace Luxa
 	class Icon : public Component
 	{
 		public:
-			Icon(boost::shared_ptr<v3D::Texture> texture, ComponentManager * cm);
+			Icon(boost::shared_ptr<v3D::GLTexture> texture, ComponentManager * cm);
 			~Icon();
 
 			/**
@@ -31,7 +31,7 @@ namespace Luxa
 			void draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme> & theme) const;
 
 		private:
-			boost::shared_ptr<v3D::Texture> texture_;
+			boost::shared_ptr<v3D::GLTexture> texture_;
 	};
 
 

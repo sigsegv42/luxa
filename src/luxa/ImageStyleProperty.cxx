@@ -10,12 +10,12 @@ ImageStyleProperty::~ImageStyleProperty()
 {
 }
 
-boost::shared_ptr<v3D::Texture> ImageStyleProperty::texture(void) const
+boost::shared_ptr<v3D::GLTexture> ImageStyleProperty::texture(void) const
 {
 	return texture_;
 }
 
-void ImageStyleProperty::texture(boost::shared_ptr<v3D::Texture> tex)
+void ImageStyleProperty::texture(boost::shared_ptr<v3D::GLTexture> tex)
 {
 	texture_ = tex;
 }

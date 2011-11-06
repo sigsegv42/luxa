@@ -5,11 +5,12 @@
 #include "../luxa/Label.h"
 #include "../luxa/UILoader.h"
 
-#include <hookah/Hookah.h>
+#include <vertical3d/hookah/Hookah.h>
 
 //#include "../hookah/BindLoader.h"
 
 #include <boost/bind.hpp>
+#include <boost/property_tree/xml_parser.hpp>
 
 Controller::Controller()
 {
@@ -20,16 +21,19 @@ Controller::Controller()
 	keyboard_ = boost::shared_dynamic_cast<v3D::KeyboardDevice, v3D::InputDevice>(Hookah::CreateInputDevice("keyboard"));
 	mouse_ = boost::shared_dynamic_cast<v3D::MouseDevice, v3D::InputDevice>(Hookah::CreateInputDevice("mouse"));
 
+	directory_ = boost::shared_ptr<v3D::CommandDirectory>(new v3D::CommandDirectory());
+	fontCache_ = boost::shared_ptr<v3D::FontCache>(new v3D::FontCache());
+
 	// register app's command directory as an observer of input device events
-	listenerAdapter_.reset(new InputEventAdapter(keyboard_, mouse_));
-	listenerAdapter_->connect(&directory_);
+	listenerAdapter_.reset(new v3D::InputEventAdapter(keyboard_, mouse_));
+	listenerAdapter_->connect(boost::shared_dynamic_cast<v3D::EventListener>(directory_).get());
 
 	// [TODO] - need a font cache here still
-	cm_ = new Luxa::ComponentManager(0, &directory_);
+	cm_ = boost::shared_ptr<Luxa::ComponentManager> (new Luxa::ComponentManager(fontCache_, directory_));
 
 	// register component manager as an observer of input device events
-	keyboard_->addEventListener(boost::shared_dynamic_cast<v3D::EventListener, Luxa::ComponentManager>(cm_), "luxa::cm");
-	mouse_->addEventListener(&cm_, "luxa::cm");
+	keyboard_->addEventListener(boost::shared_dynamic_cast<v3D::KeyboardEventListener, Luxa::ComponentManager>(cm_).get(), "luxa::cm");
+	mouse_->addEventListener(cm_.get(), "luxa::cm");
 
 	// add devices to window
 	window_->addInputDevice("keyboard", keyboard_);
@@ -39,8 +43,8 @@ Controller::Controller()
 	window_->caption("uitest");
 
 	// load config file into a property tree
-	PropertyTree ptree;
-	ptree.load("vgui.xml");
+	boost::property_tree::ptree ptree;
+	boost::property_tree::read_xml("vgui.xml", ptree);
 
 	/*
 	// load key binds from the property tree
@@ -77,10 +81,10 @@ there are several scenarios:
 
 	// load UI from the root config property tree
 	Luxa::UILoader ui_loader;
-	ui_loader.load(ptree, &cm_);
+	ui_loader.load(ptree, cm_.get());
 
 	// create free ui objects directly on canvas procedurally
-	boost::shared_ptr<Luxa::Button> button(new Luxa::Button());
+	boost::shared_ptr<Luxa::Button> button(new Luxa::Button(cm_.get()));
 	button->label("Test Button");
 	button->size(v3D::Vector2(100., 50.));
 	button->position(v3D::Vector2(100., 100.));
@@ -88,12 +92,13 @@ there are several scenarios:
 
 	// create an icon that uses the default ui font's texture as its source image
 	boost::shared_ptr<v3D::Font2D> font = cm_->fonts()->get("ui-text-font");
-	boost::shared_ptr<Luxa::Icon> icon(new Luxa::Icon(font->texture()));
+	boost::shared_ptr<v3D::GLTexture> font_texture(new v3D::GLTexture(*font->texture()));
+	boost::shared_ptr<Luxa::Icon> icon(new Luxa::Icon(font_texture, cm_.get()));
 	icon->position(v3D::Vector2(300., 20.));
 	cm_->addOverlayComponent(icon);
 
 	// create a text label
-	boost::shared_ptr<Luxa::Label> label(new Luxa::Label(cm_));
+	boost::shared_ptr<Luxa::Label> label(new Luxa::Label(cm_.get()));
 	label->text("Test Label");
 	label->position(v3D::Vector2(100., 300.));
 	cm_->addOverlayComponent(label);

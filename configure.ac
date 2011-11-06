@@ -9,11 +9,6 @@ AC_HEADER_STDC
 AC_CHECK_HEADERS([string])
 AC_CHECK_HEADERS([iostream])
 
-# need at least vertical3d 1.0
-V3D_REQUIRE([1.0])
-# additional v3d library checks
-V3D_3DTYPES
-
 # need at least boost 1.41 for property tree support
 BOOST_REQUIRE([1.41])
 BOOST_TEST
@@ -21,6 +16,7 @@ BOOST_SYSTEM
 BOOST_FILESYSTEM
 BOOST_PROGRAM_OPTIONS
 BOOST_PROPERTY_TREE
+BOOST_SIGNALS
 
 # use pkg-config
 PKG_PROG_PKG_CONFIG([0.2])
@@ -38,6 +34,8 @@ PKG_CHECK_MODULES([freetype2], [freetype2])
 
 # libhookah needs sdl
 PKG_CHECK_MODULES([sdl], [sdl])
+
+PKG_CHECK_MODULES([gl], [gl])
 
 AC_ARG_WITH(jpeg, 
 	[AC_HELP_STRING([--with-jpeg=<DIR>],
@@ -70,6 +68,16 @@ if test "$jpeg_ok" = yes; then
 fi
 AC_SUBST([JPEG_LIBS])
 
+# need at least vertical3d 1.0
+V3D_REQUIRE([1.0])
+# additional v3d library checks
+V3D_3DTYPES
+V3D_IMAGE
+V3D_FONT
+V3D_INPUT
+V3D_COMMAND
+V3D_GL
+V3D_GUI
 
 # gcov support (for code coverage reports)
 

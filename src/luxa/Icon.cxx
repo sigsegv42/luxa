@@ -3,7 +3,7 @@
 
 using namespace Luxa;
 
-Icon::Icon(boost::shared_ptr<v3D::Texture> texture, ComponentManager * cm) : Component(cm), texture_(texture)
+Icon::Icon(boost::shared_ptr<v3D::GLTexture> texture, ComponentManager * cm) : Component(cm), texture_(texture)
 {
 }
 

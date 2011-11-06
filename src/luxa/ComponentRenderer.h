@@ -2,7 +2,7 @@
 #define INCLUDED_LUXA_COMPONENTRENDERER
 
 #include <vertical3d/3dtypes/Vector2.h>
-#include <vertical3d/image/Texture.h>
+#include <vertical3d/gl/GLTexture.h>
 #include <vertical3d/font/FontCache.h>
 
 #include <boost/shared_ptr.hpp>
@@ -43,13 +43,13 @@ namespace Luxa
 			 * @param width the width of the quad in pixels
 			 * @param height the height of the quad in pixels
 			 */
-			bool drawTexturedQuad(boost::shared_ptr<v3D::Texture> texture, float position_x, float position_y, float width, float height);
+			bool drawTexturedQuad(boost::shared_ptr<v3D::GLTexture> texture, float position_x, float position_y, float width, float height);
 			/**
 			 * Draw a texture
 			 * @param texture the texture to draw
 			 * @param position the position to draw the texture at
 			 */
-			bool drawTexture(boost::shared_ptr<v3D::Texture> texture, v3D::Vector2 position);
+			bool drawTexture(boost::shared_ptr<v3D::GLTexture> texture, v3D::Vector2 position);
 
 			/**
 			 * Set the rendering color
