@@ -512,5 +512,43 @@ LIBS="$LIBS $V3D_INPUT_LIBS $V3D_COMMAND_LIBS $BOOST_SIGNALS_LIBS"
 LIBS=$v3d_gui_save_LIBS
 ])# V3D_GUI
 
+# V3D_HOOKAH()
+# -----------------------------------------
+# Look for libv3dhookah
+V3D_DEFUN([hookah],
+v3d_hookah_save_LIBS=$LIBS
+LIBS="$LIBS $BOOST_SIGNALS_LIBS"
+[V3D_FIND_LIB([hookah],
+                [vertical3d/hookah/Window.h],
+                [])
+LIBS=$v3d_hookah_save_LIBS
+])# V3D_HOOKAH
+
+# V3D_HOOKAH_SDL()
+# -----------------------------------------
+# Look for libv3dhookah_sdl
+V3D_DEFUN([hookah_sdl],
+v3d_hookah_save_LIBS=$LIBS
+LIBS="$LIBS $V3D_HOOKAH_LIBS $BOOST_SIGNALS_LIBS"
+[V3D_FIND_LIB([hookah_sdl],
+                [vertical3d/hookah/drivers/SDLWindow.h],
+                [])
+LIBS=$v3d_hookah_save_LIBS
+])# V3D_HOOKAH
+
+
+# V3D_HOOKAH_FLTK()
+# -----------------------------------------
+# Look for libv3dhookah_fltk
+V3D_DEFUN([hookah_fltk],
+v3d_hookah_save_LIBS=$LIBS
+LIBS="$LIBS $FLTK_LDFLAGS $V3D_HOOKAH_LIBS $BOOST_SIGNALS_LIBS $V3D_INPUT_LIBS"
+[V3D_FIND_LIB([hookah_fltk],
+                [vertical3d/hookah/drivers/FLTKWindow.h],
+                [])
+LIBS=$v3d_hookah_save_LIBS
+])# V3D_HOOKAH
+
+
 #V3D_AUDIO
 #V3D_BREP

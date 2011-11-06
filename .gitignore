@@ -25,3 +25,5 @@ missing
 *Makefile
 aclocal.m4
 src/luxa/.libs/
+src/uitest/.libs/
+src/uitest/uitest

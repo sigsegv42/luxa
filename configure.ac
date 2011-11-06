@@ -68,6 +68,11 @@ if test "$jpeg_ok" = yes; then
 fi
 AC_SUBST([JPEG_LIBS])
 
+FLTK_CXXFLAGS=`fltk2-config --cxxflags`
+AC_SUBST([FLTK_CXXFLAGS])
+FLTK_LDFLAGS=`fltk2-config --use-gl --ldflags`
+AC_SUBST([FLTK_LDFLAGS])
+
 # need at least vertical3d 1.0
 V3D_REQUIRE([1.0])
 # additional v3d library checks
@@ -78,6 +83,8 @@ V3D_INPUT
 V3D_COMMAND
 V3D_GL
 V3D_GUI
+V3D_HOOKAH
+V3D_HOOKAH_FLTK
 
 # gcov support (for code coverage reports)
 
