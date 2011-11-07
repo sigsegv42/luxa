@@ -446,7 +446,7 @@ LIBS=$v3d_image_save_LIBS
 # Look for libv3dcommand
 V3D_DEFUN([command],
 v3d_command_save_LIBS=$LIBS
-LIBS="$LIBS $BOOST_SIGNALS_LIBS"
+LIBS="$LIBS $BOOST_SIGNALS_LIBS $liblog4cxx_LIBS"
 [V3D_FIND_LIB([command],
                 [vertical3d/command/Command.h],
                 [v3D::CommandInfo test("cmd");])
@@ -505,7 +505,7 @@ V3D_DEFUN([gui],
 # we need to link a bunch of other dependent libraries. so this macro
 # must only be used after those dependent library macros have been called
 v3d_gui_save_LIBS=$LIBS
-LIBS="$LIBS $V3D_INPUT_LIBS $V3D_COMMAND_LIBS $BOOST_SIGNALS_LIBS"
+LIBS="$LIBS $V3D_INPUT_LIBS $V3D_COMMAND_LIBS $BOOST_SIGNALS_LIBS $liblog4cxx_LIBS"
 [V3D_FIND_LIB([gui],
                 [vertical3d/gui/InputEventAdapter.h],
                 [])
@@ -529,7 +529,7 @@ LIBS=$v3d_hookah_save_LIBS
 # Look for libv3dhookah_sdl
 V3D_DEFUN([hookah_sdl],
 v3d_hookah_save_LIBS=$LIBS
-LIBS="$LIBS $V3D_HOOKAH_LIBS $BOOST_SIGNALS_LIBS"
+LIBS="$LIBS $V3D_HOOKAH_LIBS $BOOST_SIGNALS_LIBS $sdl_LIBS $V3D_INPUT_LIBS"
 [V3D_FIND_LIB([hookah_sdl],
                 [vertical3d/hookah/drivers/SDLWindow.h],
                 [])
@@ -550,5 +550,16 @@ LIBS=$v3d_hookah_save_LIBS
 ])# V3D_HOOKAH
 
 
-#V3D_AUDIO
+# V3D_AUDIO()
+# -----------------------------------------
+# Look for libv3daudio
+V3D_DEFUN([audio],
+v3d_audio_save_LIBS=$LIBS
+LIBS="$LIBS $openal_LIBS $freealut_LIBS $V3D_TYPES_LIBS"
+[V3D_FIND_LIB([audio],
+                [vertical3d/audio/AudioClip.h],
+                [v3D::AudioClip test();])
+LIBS=$v3d_audio_save_LIBS
+])# V3D_AUDIO
+
 #V3D_BREP
