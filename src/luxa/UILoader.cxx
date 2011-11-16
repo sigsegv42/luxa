@@ -9,64 +9,10 @@
 #include "Icon.h"
 #include "MenuStack.h"
 
-#include <boost/lexical_cast.hpp>
 #include <boost/foreach.hpp>
 #include <log4cxx/logger.h>
 
 using namespace Luxa;
-/*
-v3D::Vector3 to_vector3(const std::string & val)
-{
-	std::string var_x, var_y, var_z;
-	size_t pos, pos2;
-	pos = val.find(",");
-	var_x = val.substr(0, pos);
-	pos2 = val.find(",", pos+1);
-	var_y = val.substr(pos+1, pos2);
-	var_z = val.substr(pos2+1, val.length());
-
-	v3D::Vector3 v;
-	v[0] = boost::lexical_cast<float>(var_x);
-	v[1] = boost::lexical_cast<float>(var_y);
-	v[2] = boost::lexical_cast<float>(var_z);
-
-	return v;
-}
-*/
-
-v3D::Vector2 to_vector2(const std::string & val)
-{
-	v3D::Vector2 v;
-
-	if (val.empty())
-	{
-		return v;
-	}
-
-	std::string var_x, var_y;
-	size_t pos;
-	pos = val.find(",");
-	var_x = val.substr(0, pos);
-	var_y = val.substr(pos+1, val.length());
-
-	try
-	{
-		if (!var_x.empty())
-		{
-			v[0] = boost::lexical_cast<float>(var_x);
-		}
-		if (!var_y.empty())
-		{
-			v[1] = boost::lexical_cast<float>(var_y);
-		}
-	}
-	catch (boost::bad_lexical_cast &)
-	{
-	}
-
-	return v;
-}
-
 
 bool UILoader::load(const boost::property_tree::ptree & tree, ComponentManager * cm)
 {
@@ -284,7 +230,7 @@ bool UILoader::loadButton(const boost::property_tree::ptree & button_node, Compo
 	label = button_node.get<std::string>("<xmlattr>.label");
 	command = button_node.get<std::string>("<xmlattr>.command");
 	scope = button_node.get<std::string>("<xmlattr>.scope");
-	v3D::Vector2 size = to_vector2(button_node.get<std::string>("<xmlattr>.size"));
+	v3D::Vector2 size(button_node.get<std::string>("<xmlattr>.size"));
 	button->label(label);
 	button->size(size);
 	loadDefaultComponentAttributes(button_node, button);
@@ -311,7 +257,7 @@ void UILoader::loadDefaultComponentAttributes(const boost::property_tree::ptree 
 	std::string position = node.get<std::string>("<xmlattr>.position", "");
 	if (!position.empty())
 	{
-		component->position(to_vector2(position));
+		component->position(v3D::Vector2(position));
 	}
 	std::string style = node.get<std::string>("<xmlattr>.style", "");
 	if (!style.empty())
