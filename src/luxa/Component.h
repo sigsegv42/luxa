@@ -1,12 +1,17 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_COMPONENT
 #define INCLUDED_LUXA_COMPONENT
 
-#include "Theme.h"
+#include "style/Theme.h"
 
-#include <vertical3d/3dtypes/Vector2.h>
-#include <vertical3d/3dtypes/Bound2D.h>
-#include <vertical3d/command/CommandInfo.h>
-#include <vertical3d/command/EventListener.h>
+#include <3dtypes/Bound2D.h>
+#include <command/CommandInfo.h>
+#include <command/EventListener.h>
+
+#include <glm/glm.hpp>
 
 #include <string>
 
@@ -49,22 +54,22 @@ namespace Luxa
 			 * Set the position of the component.
 			 * @param pos the new position
 			 */
-			void position(const v3D::Vector2 & pos);
+			void position(const glm::vec2 & pos);
 			/**
 			 * Set the size of the component.
 			 * @param s the new size
 			 */
-			void size(const v3D::Vector2 & s);
+			void size(const glm::vec2 & s);
 			/**
 			 * Get the current position of the component.
 			 * @return the current position
 			 */
-			v3D::Vector2 position() const;
+			glm::vec2 position() const;
 			/**
 			 * Get the current size of the component.
 			 * @return the current size
 			 */
-			v3D::Vector2 size() const;
+			glm::vec2 size() const;
 			/**
 			 * Get the component's bounding volume
 			 * @return the component's bounding box
@@ -123,8 +128,8 @@ namespace Luxa
 			ComponentManager * manager_;
 
 		private:
-			v3D::Vector2 position_;
-			v3D::Vector2 size_;
+			glm::vec2 position_;
+			glm::vec2 size_;
 			unsigned int zIndex_;
 			unsigned int id_;
 			std::string style_;

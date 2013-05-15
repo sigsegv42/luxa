@@ -1,7 +1,11 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_MENUITEM
 #define INCLUDED_LUXA_MENUITEM
 
-#include "Component.h"
+#include "../Component.h"
 
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>

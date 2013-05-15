@@ -1,5 +1,9 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #include "Menu.h"
-#include "ComponentManager.h"
+#include "../ComponentManager.h"
 
 using namespace Luxa;
 

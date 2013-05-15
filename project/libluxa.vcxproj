@@ -20,10 +20,12 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -51,7 +53,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\vertical3d\src\;z:\code\vendor\boost\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\v3dlibs\src\;$(SolutionDir)..\..\vendor\boost_1_53_0\;$(SolutionDir)..\..\vendor\log4cxx\src\main\include\;$(SolutionDir)..\..\vendor\glew-1.9.0\include\;$(SolutionDir)..\..\vendor\glm-0.9.4.2\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -64,7 +66,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\vertical3d\src\;z:\code\vendor\boost\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\v3dlibs\src\;$(SolutionDir)..\..\vendor\boost_1_53_0\;$(SolutionDir)..\..\vendor\log4cxx\src\main\include\;$(SolutionDir)..\..\vendor\glew-1.9.0\include\;$(SolutionDir)..\..\vendor\glm-0.9.4.2\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -77,56 +79,56 @@
     <ClCompile Include="..\src\luxa\Component.cxx" />
     <ClCompile Include="..\src\luxa\ComponentManager.cxx" />
     <ClCompile Include="..\src\luxa\ComponentRenderer.cxx" />
+    <ClCompile Include="..\src\luxa\menu\Menu.cxx" />
+    <ClCompile Include="..\src\luxa\menu\MenuItem.cxx" />
+    <ClCompile Include="..\src\luxa\menu\MenuStack.cxx" />
     <ClCompile Include="..\src\luxa\Overlay.cxx" />
+    <ClCompile Include="..\src\luxa\style\ButtonStyle.cxx" />
+    <ClCompile Include="..\src\luxa\style\ColorStyleProperty.cxx" />
+    <ClCompile Include="..\src\luxa\style\FontStyleProperty.cxx" />
+    <ClCompile Include="..\src\luxa\style\ImageStyleProperty.cxx" />
+    <ClCompile Include="..\src\luxa\style\MenuStyle.cxx" />
+    <ClCompile Include="..\src\luxa\style\Style.cxx" />
+    <ClCompile Include="..\src\luxa\style\StyleProperty.cxx" />
+    <ClCompile Include="..\src\luxa\style\Theme.cxx" />
     <ClCompile Include="..\src\luxa\UILoader.cxx" />
-    <ClCompile Include="..\src\luxa\ButtonStyle.cxx" />
-    <ClCompile Include="..\src\luxa\ColorStyleProperty.cxx" />
-    <ClCompile Include="..\src\luxa\FontStyleProperty.cxx" />
-    <ClCompile Include="..\src\luxa\ImageStyleProperty.cxx" />
-    <ClCompile Include="..\src\luxa\MenuStyle.cxx" />
-    <ClCompile Include="..\src\luxa\Style.cxx" />
-    <ClCompile Include="..\src\luxa\StyleProperty.cxx" />
-    <ClCompile Include="..\src\luxa\Theme.cxx" />
     <ClCompile Include="..\src\luxa\Button.cxx" />
     <ClCompile Include="..\src\luxa\Icon.cxx" />
     <ClCompile Include="..\src\luxa\Label.cxx" />
-    <ClCompile Include="..\src\luxa\Menu.cxx" />
-    <ClCompile Include="..\src\luxa\MenuItem.cxx" />
-    <ClCompile Include="..\src\luxa\MenuStack.cxx" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\luxa\Button.h" />
+    <ClInclude Include="..\src\luxa\CheckBox.h" />
     <ClInclude Include="..\src\luxa\Component.h" />
     <ClInclude Include="..\src\luxa\ComponentManager.h" />
     <ClInclude Include="..\src\luxa\ComponentRenderer.h" />
     <ClInclude Include="..\src\luxa\Dialog.h" />
     <ClInclude Include="..\src\luxa\Frame.h" />
+    <ClInclude Include="..\src\luxa\Icon.h" />
+    <ClInclude Include="..\src\luxa\Label.h" />
+    <ClInclude Include="..\src\luxa\menu\Menu.h" />
+    <ClInclude Include="..\src\luxa\menu\MenuBar.h" />
+    <ClInclude Include="..\src\luxa\menu\MenuItem.h" />
+    <ClInclude Include="..\src\luxa\menu\MenuStack.h" />
+    <ClInclude Include="..\src\luxa\menu\PopupMenu.h" />
+    <ClInclude Include="..\src\luxa\menu\RadialMenu.h" />
     <ClInclude Include="..\src\luxa\Overlay.h" />
     <ClInclude Include="..\src\luxa\RadioButton.h" />
     <ClInclude Include="..\src\luxa\Scrollbar.h" />
     <ClInclude Include="..\src\luxa\Spinner.h" />
+    <ClInclude Include="..\src\luxa\style\ButtonStyle.h" />
+    <ClInclude Include="..\src\luxa\style\ColorStyleProperty.h" />
+    <ClInclude Include="..\src\luxa\style\FontStyleProperty.h" />
+    <ClInclude Include="..\src\luxa\style\ImageStyleProperty.h" />
+    <ClInclude Include="..\src\luxa\style\MenuStyle.h" />
+    <ClInclude Include="..\src\luxa\style\Style.h" />
+    <ClInclude Include="..\src\luxa\style\StyleProperty.h" />
+    <ClInclude Include="..\src\luxa\style\Theme.h" />
     <ClInclude Include="..\src\luxa\TabBar.h" />
     <ClInclude Include="..\src\luxa\TabPage.h" />
     <ClInclude Include="..\src\luxa\TextBox.h" />
     <ClInclude Include="..\src\luxa\UILoader.h" />
     <ClInclude Include="..\src\luxa\Window.h" />
-    <ClInclude Include="luxa\ButtonStyle.h" />
-    <ClInclude Include="luxa\ColorStyleProperty.h" />
-    <ClInclude Include="luxa\FontStyleProperty.h" />
-    <ClInclude Include="luxa\ImageStyleProperty.h" />
-    <ClInclude Include="luxa\MenuStyle.h" />
-    <ClInclude Include="luxa\Style.h" />
-    <ClInclude Include="luxa\StyleProperty.h" />
-    <ClInclude Include="luxa\Theme.h" />
-    <ClInclude Include="luxa\Button.h" />
-    <ClInclude Include="luxa\CheckBox.h" />
-    <ClInclude Include="luxa\Icon.h" />
-    <ClInclude Include="luxa\Label.h" />
-    <ClInclude Include="luxa\Menu.h" />
-    <ClInclude Include="luxa\MenuBar.h" />
-    <ClInclude Include="luxa\MenuItem.h" />
-    <ClInclude Include="luxa\MenuStack.h" />
-    <ClInclude Include="luxa\PopupMenu.h" />
-    <ClInclude Include="luxa\RadialMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

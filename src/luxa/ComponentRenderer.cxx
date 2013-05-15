@@ -1,11 +1,13 @@
-#include "ComponentRenderer.h"
-#include "FontStyleProperty.h"
-#include "Style.h"
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
 
-#ifdef __WIN32
-	#include <windows.h>
-#endif
-#include <GL/gl.h>
+#include "ComponentRenderer.h"
+#include "style/FontStyleProperty.h"
+#include "style/Style.h"
+
+#include <gl/glew.h>
+
 
 using namespace Luxa;
 
@@ -162,7 +164,7 @@ bool ComponentRenderer::drawTexturedQuad(boost::shared_ptr<v3D::GLTexture> textu
 	return true;
 }
 
-bool ComponentRenderer::drawTexture(boost::shared_ptr<v3D::GLTexture> texture, v3D::Vector2 position)
+bool ComponentRenderer::drawTexture(boost::shared_ptr<v3D::GLTexture> texture, glm::vec2 position)
 {
 	// get texturing state
 	GLboolean texture_enabled;
@@ -212,7 +214,7 @@ bool ComponentRenderer::drawTexture(boost::shared_ptr<v3D::GLTexture> texture, v
 	return true;
 }
 
-void ComponentRenderer::position(const v3D::Vector2 & pos)
+void ComponentRenderer::position(const glm::vec2 & pos)
 {
 	glTranslatef(pos[0], pos[1], 0.0f);
 }
@@ -266,7 +268,7 @@ unsigned int ComponentRenderer::height() const
 	return height_;
 }
 
-void ComponentRenderer::color(const v3D::Color3 & c)
+void ComponentRenderer::color(const glm::vec3 & c)
 {
 	glColor3f(c[0], c[1], c[2]);
 }

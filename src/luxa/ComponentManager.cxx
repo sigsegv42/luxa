@@ -1,8 +1,12 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #include "ComponentManager.h"
 #include "Component.h"
-#include "Theme.h"
+#include "style/Theme.h"
 
-#include <vertical3d/image/ImageFactory.h>
+#include <image/ImageFactory.h>
 
 #include <boost/bind.hpp>
 #include <boost/cast.hpp>
@@ -61,7 +65,7 @@ void ComponentManager::motion(unsigned int x, unsigned int y)
 	}
 }
 
-boost::shared_ptr<Component> ComponentManager::intersect(v3D::Vector2 point) const
+boost::shared_ptr<Component> ComponentManager::intersect(glm::vec2 point) const
 {
 	boost::shared_ptr<Component> component;
 	std::vector< boost::shared_ptr<Component> >::const_iterator iter = components_.begin();

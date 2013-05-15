@@ -1,3 +1,7 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #include "Icon.h"
 #include "ComponentRenderer.h"
 
@@ -13,7 +17,7 @@ Icon::~Icon()
 
 void Icon::draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme> & theme) const
 {
-	v3D::Vector2 pos = position();
+	glm::vec2 pos = position();
 	float width = static_cast<float>(texture_->width());
 	float height = static_cast<float>(texture_->height());
 	renderer->drawTexture(texture_, pos);

@@ -1,10 +1,14 @@
-#include "MenuStack.h"
-#include "ComponentRenderer.h"
-#include "Theme.h"
-#include "Style.h"
-#include "FontStyleProperty.h"
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
 
-#include <vertical3d/gl/GLFontRenderer.h>
+#include "MenuStack.h"
+#include "../ComponentRenderer.h"
+#include "../style/Theme.h"
+#include "../style/Style.h"
+#include "../style/FontStyleProperty.h"
+
+#include <gl/GLFontRenderer.h>
 
 using namespace Luxa;
 
@@ -19,7 +23,7 @@ MenuStack::~MenuStack()
 void MenuStack::draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme> & theme) const
 {
 	renderer->clear();
-	renderer->color(v3D::Color3(0.75f, 0.75f, 0.75f));
+	renderer->color(glm::vec3(0.75f, 0.75f, 0.75f));
 	// locally formatted label string
 	std::string label;
 	boost::shared_ptr<Menu> lvl = level();

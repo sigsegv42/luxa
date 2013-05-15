@@ -1,13 +1,19 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #include "UILoader.h"
 #include "ComponentManager.h"
-#include "Theme.h"
-#include "ButtonStyle.h"
-#include "ImageStyleProperty.h"
-#include "MenuStyle.h"
-#include "FontStyleProperty.h"
+#include "style/Theme.h"
+#include "style/ButtonStyle.h"
+#include "style/ImageStyleProperty.h"
+#include "style/MenuStyle.h"
+#include "style/FontStyleProperty.h"
 #include "Label.h"
 #include "Icon.h"
-#include "MenuStack.h"
+#include "menu/MenuStack.h"
+
+#include <3dtypes/String.h>
 
 #include <boost/foreach.hpp>
 #include <log4cxx/logger.h>
@@ -230,7 +236,7 @@ bool UILoader::loadButton(const boost::property_tree::ptree & button_node, Compo
 	label = button_node.get<std::string>("<xmlattr>.label");
 	command = button_node.get<std::string>("<xmlattr>.command");
 	scope = button_node.get<std::string>("<xmlattr>.scope");
-	v3D::Vector2 size(button_node.get<std::string>("<xmlattr>.size"));
+	glm::vec2 size(v3D::string_to_vec2(button_node.get<std::string>("<xmlattr>.size")));
 	button->label(label);
 	button->size(size);
 	loadDefaultComponentAttributes(button_node, button);
@@ -257,7 +263,7 @@ void UILoader::loadDefaultComponentAttributes(const boost::property_tree::ptree 
 	std::string position = node.get<std::string>("<xmlattr>.position", "");
 	if (!position.empty())
 	{
-		component->position(v3D::Vector2(position));
+		component->position(v3D::string_to_vec2(position));
 	}
 	std::string style = node.get<std::string>("<xmlattr>.style", "");
 	if (!style.empty())
@@ -406,7 +412,7 @@ bool UILoader::loadTextures(ComponentManager * cm)
 		for (; prop_iter != properties.end(); prop_iter++)
 		{
 			boost::shared_ptr<ImageStyleProperty> image_prop = 
-					boost::shared_dynamic_cast<ImageStyleProperty, StyleProperty>(*prop_iter);
+				boost::dynamic_pointer_cast<ImageStyleProperty, StyleProperty>(*prop_iter);
 			std::string texture_name = (*style_iter)->name() + "-" + image_prop->name() + "-" + image_prop->source();
 			// load the image
 			boost::shared_ptr<v3D::Image> img = cm->loadImage(image_prop->source());

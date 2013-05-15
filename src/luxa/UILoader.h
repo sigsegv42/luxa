@@ -1,3 +1,7 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_UILOADER
 #define INCLUDED_LUXA_UILOADER
 

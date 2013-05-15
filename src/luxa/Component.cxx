@@ -1,3 +1,7 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #include "Component.h"
 
 using namespace Luxa;
@@ -36,22 +40,22 @@ void Component::notify(const v3D::EventInfo & e)
 {
 }
 
-void Component::position(const v3D::Vector2 & pos)
+void Component::position(const glm::vec2 & pos)
 {
 	position_ = pos;
 }
 
-void Component::size(const v3D::Vector2 & s)
+void Component::size(const glm::vec2 & s)
 {
 	size_ = s;
 }
 
-v3D::Vector2 Component::position() const
+glm::vec2 Component::position() const
 {
 	return position_;
 }
 
-v3D::Vector2 Component::size() const
+glm::vec2 Component::size() const
 {
 	return size_;
 }

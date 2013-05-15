@@ -1,7 +1,11 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_OVERLAY
 #define INCLUDED_LUXA_OVERLAY
 
-#include <vertical3d/3dtypes/Color3.h>
+#include <3dtypes/Color3.h>
 
 namespace Luxa
 {

@@ -1,14 +1,18 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_COMPONENTRENDERER
 #define INCLUDED_LUXA_COMPONENTRENDERER
 
-#include <vertical3d/3dtypes/Vector2.h>
-#include <vertical3d/gl/GLTexture.h>
-#include <vertical3d/font/FontCache.h>
+#include <gl/GLTexture.h>
+#include <font/FontCache.h>
 
 #include <boost/shared_ptr.hpp>
+#include <glm/glm.hpp>
 
 #include "Overlay.h"
-#include "Theme.h"
+#include "style/Theme.h"
 
 namespace Luxa
 {
@@ -49,19 +53,19 @@ namespace Luxa
 			 * @param texture the texture to draw
 			 * @param position the position to draw the texture at
 			 */
-			bool drawTexture(boost::shared_ptr<v3D::GLTexture> texture, v3D::Vector2 position);
+			bool drawTexture(boost::shared_ptr<v3D::GLTexture> texture, glm::vec2 position);
 
 			/**
 			 * Set the rendering color
 			 * @param c the color to use for rendering
 			 */
-			void color(const v3D::Color3 & c);
+			void color(const glm::vec3 & c);
 
 			/**
 			 * Translate to the requested position relative to the current position
 			 * @param pos the new relative position to move to
 			 */
-			void position(const v3D::Vector2 & pos);
+			void position(const glm::vec2 & pos);
 			/**
 			 * Push the rendering matrix state
 			 */

@@ -1,7 +1,11 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_MENU
 #define INCLUDED_LUXA_MENU
 
-#include "Component.h"
+#include "../Component.h"
 #include "MenuItem.h"
 
 #include <vector>

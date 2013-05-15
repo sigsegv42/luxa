@@ -1,3 +1,7 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #include "ImageStyleProperty.h"
 
 using namespace Luxa;

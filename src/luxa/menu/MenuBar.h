@@ -1,7 +1,11 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_MENUBAR
 #define INCLUDED_LUXA_MENUBAR
 
-#include "Component.h"
+#include "../Component.h"
 
 namespace Luxa
 {

@@ -1,9 +1,13 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_ICON
 #define INCLUDED_LUXA_ICON
 
 #include "Component.h"
 
-#include <vertical3d/gl/GLTexture.h>
+#include <gl/GLTexture.h>
 
 #include <boost/shared_ptr.hpp>
 

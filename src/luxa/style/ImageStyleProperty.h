@@ -1,9 +1,13 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_IMAGESTYLEPROPERTY
 #define INCLUDED_LUXA_IMAGESTYLEPROPERTY
 
 #include "StyleProperty.h"
 
-#include <vertical3d/gl/GLTexture.h>
+#include <gl/GLTexture.h>
 
 #include <boost/shared_ptr.hpp>
 

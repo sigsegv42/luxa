@@ -1,13 +1,17 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_COMPONENTMANAGER
 #define INCLUDED_LUXA_COMPONENTMANAGER
 
 #include "ComponentRenderer.h"
 
-#include <vertical3d/image/Texture.h>
-#include <vertical3d/hookah/Window.h>
-#include <vertical3d/input/MouseEventListener.h>
-#include <vertical3d/input/KeyboardEventListener.h>
-#include <vertical3d/command/CommandDirectory.h>
+#include <image/Texture.h>
+#include <hookah/Window.h>
+#include <input/MouseEventListener.h>
+#include <input/KeyboardEventListener.h>
+#include <command/CommandDirectory.h>
 
 #include <vector>
 #include <map>
@@ -101,7 +105,7 @@ namespace Luxa
 			 * @param point the hit point to test against
 			 * @return the component at the specified point
 			 */
-			boost::shared_ptr<Component> intersect(v3D::Vector2 point) const;
+			boost::shared_ptr<Component> intersect(glm::vec2 point) const;
 
 			bool toggleComponentVisibility(const std::string & name);
 
@@ -131,7 +135,7 @@ namespace Luxa
 			std::map<std::string, boost::shared_ptr<v3D::Texture> >	textures_;
 			boost::shared_ptr<v3D::CommandDirectory> directory_;
 			ComponentRenderer renderer_;
-			v3D::Vector2 mouse_;
+			glm::vec2 mouse_;
 			boost::shared_ptr<Component> focused_;
 	};
 

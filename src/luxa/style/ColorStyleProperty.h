@@ -1,9 +1,13 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_COLORSTYLEPROPERTY
 #define INCLUDED_LUXA_COLORSTYLEPROPERTY
 
 #include "StyleProperty.h"
 
-#include <vertical3d/3dtypes/Color3.h>
+#include <3dtypes/Color3.h>
 
 namespace Luxa
 {

@@ -1,10 +1,14 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #include "Button.h"
 #include "ComponentManager.h"
-#include "ButtonStyle.h"
-#include "ImageStyleProperty.h"
-#include "FontStyleProperty.h"
+#include "style/ButtonStyle.h"
+#include "style/ImageStyleProperty.h"
+#include "style/FontStyleProperty.h"
 
-#include <vertical3d/gl/GLFontRenderer.h>
+#include <gl/GLFontRenderer.h>
 
 using namespace Luxa;
 
@@ -102,7 +106,7 @@ void Button::draw(ComponentRenderer * renderer, const boost::shared_ptr<Theme> &
 	float bottom_height = static_cast<float>(bottom_texture->height());
 
 	// get default button dims
-	v3D::Vector2 s = size();
+	glm::vec2 s = size();
 	float button_width = s[0];
 	float button_height = s[1];
 

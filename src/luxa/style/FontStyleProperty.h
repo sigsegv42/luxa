@@ -1,3 +1,7 @@
+/**
+ * (c) Joshua Farr <j.wgasa@gmail.com>
+ */
+
 #ifndef INCLUDED_LUXA_FONTSTYLEPROPERTY
 #define INCLUDED_LUXA_FONTSTYLEPROPERTY
 
