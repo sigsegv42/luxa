@@ -5,7 +5,7 @@
 #include "Label.h"
 #include "ComponentRenderer.h"
 
-#include <gl/GLFontRenderer.h>
+#include <vertical3d/gl/GLFontRenderer.h>
 
 using namespace Luxa;
 

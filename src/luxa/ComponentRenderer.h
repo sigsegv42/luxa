@@ -5,8 +5,8 @@
 #ifndef INCLUDED_LUXA_COMPONENTRENDERER
 #define INCLUDED_LUXA_COMPONENTRENDERER
 
-#include <gl/GLTexture.h>
-#include <font/FontCache.h>
+#include <vertical3d/gl/GLTexture.h>
+#include <vertical3d/font/FontCache.h>
 
 #include <boost/shared_ptr.hpp>
 #include <glm/glm.hpp>

@@ -99,17 +99,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="uitest\Controller.cxx" />
-    <ClCompile Include="uitest\uitest.cxx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="uitest\Controller.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="libluxa.vcxproj">
       <Project>{81d7e173-28f2-494b-8cbd-4adb62367da8}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\uitest\Controller.cxx" />
+    <ClCompile Include="..\src\uitest\uitest.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\uitest\Controller.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

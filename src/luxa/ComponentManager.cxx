@@ -6,7 +6,7 @@
 #include "Component.h"
 #include "style/Theme.h"
 
-#include <image/ImageFactory.h>
+#include <vertical3d/image/ImageFactory.h>
 
 #include <boost/bind.hpp>
 #include <boost/cast.hpp>
@@ -32,6 +32,10 @@ boost::shared_ptr<v3D::Image> ComponentManager::loadImage(const std::string & fi
 	v3D::ImageFactory factory;
 	boost::shared_ptr<v3D::Image> img = factory.read(filename);
 	return img;
+}
+
+void ComponentManager::notify(const v3D::EventInfo & e)
+{
 }
 
 void ComponentManager::motion(unsigned int x, unsigned int y)

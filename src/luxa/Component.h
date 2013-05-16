@@ -7,9 +7,9 @@
 
 #include "style/Theme.h"
 
-#include <3dtypes/Bound2D.h>
-#include <command/CommandInfo.h>
-#include <command/EventListener.h>
+#include <vertical3d/3dtypes/Bound2D.h>
+#include <vertical3d/command/CommandInfo.h>
+#include <vertical3d/event/EventListener.h>
 
 #include <glm/glm.hpp>
 

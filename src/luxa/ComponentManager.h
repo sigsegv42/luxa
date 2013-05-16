@@ -7,11 +7,11 @@
 
 #include "ComponentRenderer.h"
 
-#include <image/Texture.h>
-#include <hookah/Window.h>
-#include <input/MouseEventListener.h>
-#include <input/KeyboardEventListener.h>
-#include <command/CommandDirectory.h>
+#include <vertical3d/image/Texture.h>
+#include <vertical3d/hookah/Window.h>
+#include <vertical3d/input/MouseEventListener.h>
+#include <vertical3d/input/KeyboardEventListener.h>
+#include <vertical3d/command/CommandDirectory.h>
 
 #include <vector>
 #include <map>
@@ -127,6 +127,7 @@ namespace Luxa
 			// overrides from KeyboardEventListener base
 			void keyPressed(const std::string & key);
 			void keyReleased(const std::string & key);
+			void notify(const v3D::EventInfo & e);
 
 		private:
 			std::vector< boost::shared_ptr<Component> > components_;

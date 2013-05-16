@@ -8,7 +8,7 @@
 #include "../style/Style.h"
 #include "../style/FontStyleProperty.h"
 
-#include <gl/GLFontRenderer.h>
+#include <vertical3d/gl/GLFontRenderer.h>
 
 using namespace Luxa;
 

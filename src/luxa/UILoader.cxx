@@ -13,7 +13,7 @@
 #include "Icon.h"
 #include "menu/MenuStack.h"
 
-#include <3dtypes/String.h>
+#include <vertical3d/3dtypes/String.h>
 
 #include <boost/foreach.hpp>
 #include <log4cxx/logger.h>

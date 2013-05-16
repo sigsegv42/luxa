@@ -7,7 +7,7 @@
 
 #include "StyleProperty.h"
 
-#include <3dtypes/Color3.h>
+#include <vertical3d/3dtypes/Color3.h>
 
 namespace Luxa
 {

@@ -5,7 +5,7 @@
 #ifndef INCLUDED_LUXA_OVERLAY
 #define INCLUDED_LUXA_OVERLAY
 
-#include <3dtypes/Color3.h>
+#include <vertical3d/3dtypes/Color3.h>
 
 namespace Luxa
 {
