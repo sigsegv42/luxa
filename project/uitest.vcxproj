@@ -55,7 +55,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\vertical3d\src\;z:\code\vendor\boost\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\v3dlibs\src\;$(SolutionDir)..\..\vendor\boost_1_53_0\;$(SolutionDir)..\..\vendor\glm-0.9.4.2\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -66,8 +66,8 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>OpenGL32.lib;libv3dtypes.lib;libv3dcommand.lib;libhookah.lib;libv3dfont.lib;libv3dimage.lib;libv3dutil.lib;QuantumXML.lib;libpng13d.lib;zlib1d.lib;freetype237MT_D.lib;libv3dinput.lib;libv3dgui.lib;libjpeg.lib;libhookah_fltk.lib;fltk2d.lib;fltk2_gld.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\vertical3d\build\$(Configuration);z:\code\vendor\boost\stage\lib;z:\code\vendor\fltk-2.0.x-r6149\lib;$(SolutionDir)..\QuantumXML\build\$(Configuration);z:\code\vendor\libpng-1.2.29;z:\code\vendor\freetype-2.3.7\objs;z:\code\vendor\jpeg-6b\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenGL32.lib;libv3dtypes.lib;libv3dcommand.lib;libhookah.lib;libv3dfont.lib;libv3dimage.lib;libv3dutil.lib;libv3devent.lib;QuantumXML.lib;libpng15d.lib;zlib.lib;freetype2411MT_D.lib;libv3dinput.lib;libv3dgui.lib;libjpeg.lib;libhookah_fltk.lib;fltk2d.lib;fltk2_gld.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\v3dlibs\win_build\$(Configuration);$(SolutionDir)..\..\vendor\boost_1_53_0\stage\lib;z:\code\vendor\fltk-2.0.x-r6149\lib;$(SolutionDir)..\QuantumXML\build\$(Configuration);$(SolutionDir)..\..\vendor\libpng-1.5.10\projects\vstudio\$(Configuration);z:\code\vendor\freetype-2.4.11\objs;z:\code\vendor\jpeg-8d\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -78,7 +78,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\vertical3d\src\;z:\code\vendor\boost\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\v3dlibs\src\;$(SolutionDir)..\..\vendor\boost_1_53_0\;$(SolutionDir)..\..\vendor\glm-0.9.4.2\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -87,8 +87,8 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>OpenGL32.lib;SDL.lib;libv3dtypes.lib;libv3dcommand.lib;libhookah.lib;libv3dfont.lib;libv3dimage.lib;libv3dutil.lib;QuantumXML.lib;libpng13.lib;zlib1.lib;freetype237MT.lib;libv3dinput.lib;libv3dgui.lib;libjpeg.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\vertical3d\build\$(Configuration);z:\code\vendor\boost\stage\lib;z:\code\vendor\fltk-2.0.x-r6149\lib;$(SolutionDir)..\QuantumXML\build\$(Configuration);z:\code\vendor\libpng-1.2.29;z:\code\vendor\freetype-2.3.7\objs;z:\code\vendor\jpeg-6b\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenGL32.lib;SDL.lib;libv3dtypes.lib;libv3dcommand.lib;libhookah.lib;libv3dfont.lib;libv3dimage.lib;libv3dutil.lib;QuantumXML.lib;libpng15.lib;zlib.lib;freetype2411MT.lib;libv3dinput.lib;libv3devent.lib;libv3dgui.lib;libjpeg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\v3dlibs\win_build\$(Configuration);$(SolutionDir)..\..\vendor\boost_1_53_0\stage\lib;z:\code\vendor\fltk-2.0.x-r6149\lib;$(SolutionDir)..\QuantumXML\build\$(Configuration);$(SolutionDir)..\..\vendor\libpng-1.5.10\projects\vstudio\$(Configuration);z:\code\vendor\freetype-2.4.11\objs;z:\code\vendor\jpeg-8d\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
